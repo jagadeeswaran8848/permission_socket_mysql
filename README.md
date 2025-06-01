@@ -46,3 +46,34 @@ CREATE TABLE database_name.table_name (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL
 );
+```
+### 2. 📦 Install Dependencies
+Install the MySQL connector package for Python:
+
+```
+pip install mysql-connector-python
+```
+
+### 3. 🚀 Start the Admin Server
+```
+ python admin_server.py
+```
+
+Enter your MySQL admin username and password when prompted.
+The server will listen on 0.0.0.0:5000.
+Press Ctrl+C to stop the server gracefully.
+
+### 4. 👤 Run the User Client
+```
+python user_client.py
+```
+
+Enter your username.
+Submit a valid GRANT query.
+Wait for the admin to approve or reject your request.
+
+Example :
+```
+GRANT SELECT, INSERT ON database_name.table_name TO 'username'@'%';
+```
+
